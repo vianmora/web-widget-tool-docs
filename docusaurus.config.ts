@@ -18,7 +18,11 @@ const config: Config = {
   projectName: 'web-widget-tool-docs',
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
 
   i18n: {
     defaultLocale: 'en',
@@ -80,7 +84,7 @@ const config: Config = {
         {
           title: 'Documentation',
           items: [
-            {label: 'Self-Hosting', to: '/self-hosting/introduction'},
+            {label: 'Self-Hosting', to: '/'},
             {label: 'Contributing', to: '/contributing/introduction'},
           ],
         },

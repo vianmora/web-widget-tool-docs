@@ -61,6 +61,6 @@ No npm, no build step, no framework required — it works on any HTML page.
 
 ## Next steps
 
-- [Requirements](./requirements) — check what you need before installing
-- [Quick Start](./quick-start) — deploy with Docker in under 5 minutes
-- [Configuration](./configuration) — full list of environment variables
+- [Requirements](/self-hosting/requirements) — check what you need before installing
+- [Quick Start](/self-hosting/quick-start) — deploy with Docker in under 5 minutes
+- [Configuration](/self-hosting/configuration) — full list of environment variables
