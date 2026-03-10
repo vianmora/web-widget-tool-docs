@@ -8,3 +8,4 @@
 | 2026-03-10 | Fix : Page Not Found sur `/` | Ajout de `slug: /` sur `docs/self-hosting/introduction.md` |
 | 2026-03-10 | Fix : hot reload non fonctionnel depuis Windows | Ajout de `--poll 1000`, `CHOKIDAR_USEPOLLING=true`, `WATCHPACK_POLLING=true` dans le compose dev |
 | 2026-03-10 | Pages P1 (self-hosting : docker, coolify, reverse-proxy ; contributing : backend overview+routes, frontend overview+catalog, widget-js overview+add-renderer) | 9 pages rédigées à partir des sources du repo principal, commit effectué |
+| 2026-03-10 | Pages P2 (self-hosting : upgrades, troubleshooting ; contributing : database, saas-mode) | 4 pages rédigées, commit effectué |

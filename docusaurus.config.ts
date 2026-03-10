@@ -11,8 +11,8 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://doc.webwidgettool.com',
-  baseUrl: '/',
+  url: 'https://vianmora.github.io',
+  baseUrl: '/web-widget-tool-docs/',
 
   organizationName: 'vianmora',
   projectName: 'web-widget-tool-docs',
