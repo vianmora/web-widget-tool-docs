@@ -1,0 +1,117 @@
+.wrapper {
+  margin: 2.5rem 0 1rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 10px;
+  background: var(--ifm-background-surface-color);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.title {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--ifm-color-emphasis-300);
+  padding: 0 2px;
+  transition: color 0.12s, transform 0.12s;
+}
+
+.star:hover,
+.star.filled {
+  color: #f59e0b;
+  transform: scale(1.2);
+}
+
+.star:disabled {
+  cursor: default;
+  transform: none;
+}
+
+.commentBox {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  resize: vertical;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--ifm-color-primary) 20%, transparent);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.sendBtn {
+  padding: 0.4rem 1.1rem;
+  background: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.sendBtn:hover {
+  background: var(--ifm-color-primary-dark);
+}
+
+.skipBtn {
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-500);
+  cursor: pointer;
+  padding: 0.4rem 0.5rem;
+}
+
+.skipBtn:hover {
+  color: var(--ifm-color-emphasis-700);
+}
+
+.thanks {
+  margin: 0;
+  color: var(--ifm-color-primary);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
