@@ -1,31 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './styles.module.css';
 
-// ─── EmailJS config ────────────────────────────────────────────────────────
-// 1. Create a free account at https://emailjs.com
-// 2. Add an email service (Gmail, Outlook…) → copy the Service ID
-// 3. Create two email templates (see docs/contributing/architecture.md)
-//    Template variables available: {{page_title}}, {{page_url}}, {{rating}}, {{comment}}
-// 4. Copy your Public Key from Account → API Keys
-const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
-const EMAILJS_RATING_TEMPLATE_ID = 'YOUR_RATING_TEMPLATE_ID';
-const EMAILJS_COMMENT_TEMPLATE_ID = 'YOUR_COMMENT_TEMPLATE_ID';
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+// ─── Backend endpoint ──────────────────────────────────────────────────────
+// Points to the web-widget-tool backend. Update when the domain changes.
+const FEEDBACK_ENDPOINT = 'https://webwidgettool.opinoi.fr/api/docs-feedback';
 // ───────────────────────────────────────────────────────────────────────────
 
-async function sendViaEmailJS(
-  templateId: string,
-  params: Record<string, string>,
-): Promise<void> {
-  await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+async function sendFeedback(params: Record<string, string>): Promise<void> {
+  await fetch(FEEDBACK_ENDPOINT, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      service_id: EMAILJS_SERVICE_ID,
-      template_id: templateId,
-      user_id: EMAILJS_PUBLIC_KEY,
-      template_params: params,
-    }),
+    body: JSON.stringify(params),
   });
 }
 
@@ -57,19 +42,19 @@ export default function FeedbackWidget(): JSX.Element {
     if (step !== 'idle') return;
     setRating(star);
     setStep('comment');
-    await sendViaEmailJS(EMAILJS_RATING_TEMPLATE_ID, {
+    await sendFeedback({
       page_url: pageUrl,
       page_title: pageTitle,
-      rating: `${star}/5`,
+      rating: String(star),
     });
   };
 
   const handleSend = async () => {
     if (comment.trim()) {
-      await sendViaEmailJS(EMAILJS_COMMENT_TEMPLATE_ID, {
+      await sendFeedback({
         page_url: pageUrl,
         page_title: pageTitle,
-        rating: `${rating}/5`,
+        rating: String(rating),
         comment,
       });
     }
