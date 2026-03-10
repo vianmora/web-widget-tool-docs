@@ -35,6 +35,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          editUrl: 'https://github.com/vianmora/web-widget-tool-docs/tree/main/',
           routeBasePath: '/',
         },
         blog: false,
